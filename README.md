@@ -47,3 +47,5 @@ You already have access to GPU infrastructure on DSMLP; i.e. it starts a contain
 You must be within GPU container in order to properly compile. If you get an error about not having access to nvcc, then you are not in the container.
 
 Please only use the container when you are compiling and release it when you are completed. 
+
+Watch the first Discussion lecture for a step-by-step guide for setting up SSH key pairs and vs code.
