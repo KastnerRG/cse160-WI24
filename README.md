@@ -7,7 +7,7 @@ You will use the [UCSD Data Science / Machine Learning Platform (DSMLP)](https:/
 
 You can login to DSMLP using by `ssh USERNAME@dsmlp-login.ucsd.edu`. Your username and password are your UCSD account. You can set up an [ssh key](https://support.ucsd.edu/services?id=kb_article_view&sys_kb_id=711d8e9e1b7b34d473462fc4604bcb47) that allows you to more easily login. 
 
-DSMLP uses containers to set up its software environment. You must create a container that provides access to a GPU with CUDA installed using the command ` launch.sh -g 1 -s -i ucsdets/nvcr-cuda:latest -W CSE160_WI23_A00`
+DSMLP uses containers to set up its software environment. You must create a container that provides access to a GPU with CUDA installed using the command ` launch.sh -g 1 -s -i ucsdets/nvcr-cuda:latest -W CSE160_WI24_A00`
 
 Once you have that container, you can compile and run the Makefiles in the PA directories.
 
