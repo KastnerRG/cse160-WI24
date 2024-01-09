@@ -7,6 +7,8 @@ You will use the [UCSD Data Science / Machine Learning Platform (DSMLP)](https:/
 
 You can login to DSMLP using by `ssh USERNAME@dsmlp-login.ucsd.edu`. Your username and password are the same as your UCSD account. You can set up an [ssh key](https://support.ucsd.edu/services?id=kb_article_view&sys_kb_id=711d8e9e1b7b34d473462fc4604bcb47) that allows you to more easily login. 
 
+Follow the steps in this [link](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac#adding-your-ssh-key-to-the-ssh-agent) to generate a key pair (Follow the guide till step 3 under 'Adding your SSH key to the ssh-agent').
+
 DSMLP uses containers to set up its software environment. You must create a container that provides access to a GPU with CUDA installed using the command ` launch.sh -g 1 -s -i ucsdets/nvcr-cuda:latest -W CSE160_WI24_A00`
 
 Once you have that container, you can compile and run the Makefiles in the PA directories.
@@ -20,7 +22,7 @@ It is possible to access DSMLP using a local version of VSCode.
 
 Steps:
 
-1. Create an SSH Key on your local machine and append the public key to DSMLP's ~/.ssh/authorized_keys file
+1. Create an SSH Key on your local machine and append the public key to DSMLP's ~/.ssh/authorized_keys file. Follow the steps in this [link](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent?platform=mac#adding-your-ssh-key-to-the-ssh-agent) to generate a key pair (Follow the guide till step 3 under 'Adding your SSH key to the ssh-agent').
 2. Install VS Code https://code.visualstudio.com/download
 3. Install Remote-SSH plugin by searching for it in the extensions view
 4. Click on the indicator on the bottom left corner
@@ -46,6 +48,10 @@ You already have access to GPU infrastructure on DSMLP; i.e. it starts a contain
 
 You must be within GPU container in order to properly compile. If you get an error about not having access to nvcc, then you are not in the container.
 
-Please only use the container when you are compiling and release it when you are completed. 
+Please only use the container when you are compiling and release it when you are completed.
 
-Watch the first Discussion lecture for a step-by-step guide for setting up SSH key pairs and vs code.
+## Note
+When you close VSCode, the kubernetes pod is not released automatically. You have to manually delete the pod using `kubectl delete <pod_name>`.
+To find your pod's name, you can run `kubectl get pods` and find all the pods open. Once you do this, you will be able to use the terminal for launching a new container if you want.
+
+P.S. Watch the first Discussion lecture for a step-by-step guide for setting up SSH key pairs and vs code.
