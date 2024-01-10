@@ -43,6 +43,9 @@ ProxyCommand ssh -i 'path to local private key' 'active directory username'@dsml
 
 7. Click on the >< key at the bottom left corner and then click on Connect to Host ... You should see a vscode-dsmlp option. Click on it to start your session. 
 
+A video is attached in case there are any issues with following the steps:
+
+https://user-images.githubusercontent.com/43923184/212788342-e9eb4280-b76e-4572-ba57-10e224bfd732.mp4
 
 You already have access to GPU infrastructure on DSMLP; i.e. it starts a container with GPU access and loads it with a software image that contains CUDA and other basic packages. 
 
