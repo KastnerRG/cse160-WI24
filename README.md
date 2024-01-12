@@ -45,7 +45,8 @@ ProxyCommand ssh -i 'path to local private key' 'active directory username'@dsml
 
 A video is attached in case there are any issues with following the steps:
 
-https://user-images.githubusercontent.com/43923184/212788342-e9eb4280-b76e-4572-ba57-10e224bfd732.mp4
+https://github.com/KastnerRG/cse160-WI24/assets/114721561/0829b8bd-96a6-48f7-b968-9ee9eda30c51
+
 
 You already have access to GPU infrastructure on DSMLP; i.e. it starts a container with GPU access and loads it with a software image that contains CUDA and other basic packages. 
 
