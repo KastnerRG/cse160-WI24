@@ -55,7 +55,7 @@ You must be within GPU container in order to properly compile. If you get an err
 Please only use the container when you are compiling and release it when you are completed.
 
 ## Note
-When you close VSCode, the kubernetes pod is not released automatically. You have to manually delete the pod using `kubectl delete <pod_name>`.
+When you close VSCode, the kubernetes pod is not released automatically. You have to manually delete the pod using `kubectl delete pod <pod_name>`.
 To find your pod's name, you can run `kubectl get pods` and find all the pods open. Once you do this, you will be able to use the terminal for launching a new container if you want.
 
 P.S. Watch the first Discussion lecture for a step-by-step guide for setting up SSH key pairs and vs code.
