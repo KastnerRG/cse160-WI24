@@ -26,3 +26,7 @@ If you run "which launch-cse160-ssh.sh", you'll (hopefully) see `/opt/dsmlp-cour
 > ### Error like: "Failed to parse remote port from server output"
 
 Try removing `dsmlp-login` and `vscode-dsmlp` from `/Users/rithvik/.ssh/known_hosts`
+
+> ### Error saying: "make: nvcc: Command not found" when you try to run make
+
+Try running `export PATH=/usr/local/nvidia/bin:/usr/local/cuda/bin:$PATH`
