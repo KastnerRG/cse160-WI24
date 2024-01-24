@@ -38,7 +38,7 @@ HostName dsmlp-login.ucsd.edu
 HostKeyAlias vscode-dsmlp
 IdentitiesOnly yes
 User 'active directory username'
-ProxyCommand ssh -i 'path to local private key' 'active directory username'@dsmlp-login.ucsd.edu launch-cse160-ssh.sh -g 1 -p normal
+ProxyCommand ssh -i 'path to local private key' 'active directory username'@dsmlp-login.ucsd.edu launch-cse160-ssh-wi24.sh -g 1 -p normal -P Always
 ```
 
 7. Click on the >< key at the bottom left corner and then click on Connect to Host ... You should see a vscode-dsmlp option. Click on it to start your session. 
