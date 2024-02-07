@@ -7,8 +7,8 @@ template.o:	template.cu
 		nvcc --compile template.cu -I ../libgputk/
 
 debug:
-		nvcc -g -G -gencode arch=compute_60,code=sm_60 --compile template.cu -I ../libgputk/
-		nvcc -g -G -gencode arch=compute_60,code=sm_60 -o solution -lm -lcuda -lrt template.o ../libgputk/lib/libgputk.a
+		nvcc -g -G -gencode arch=compute_`/usr/local/cuda/bin/__nvcc_device_query`,code=sm_`/usr/local/cuda/bin/__nvcc_device_query` --compile template.cu -I ../libgputk/
+		nvcc -g -G -gencode arch=compute_`/usr/local/cuda/bin/__nvcc_device_query`,code=sm_`/usr/local/cuda/bin/__nvcc_device_query` -o solution -lm -lcuda -lrt template.o ../libgputk/lib/libgputk.a
 
 dataset_generator:	dataset_generator.o
 		nvcc -o dataset_generator -lm -lcuda -lrt dataset_generator.o ../libgputk/lib/libgputk.a 
