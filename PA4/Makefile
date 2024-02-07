@@ -60,3 +60,6 @@ run_big: solution
 		@echo "test - 9"
 		@./solution -e ./Dataset/9/output.raw -i ./Dataset/9/input0.raw,./Dataset/9/input1.raw -t matrix
 		@echo "\n"
+
+time: solution
+	@./time.py
