@@ -12,11 +12,11 @@ char *generateInput(int /*datasetNum*/, char *dirName,
   return input_file_name;
 }
 
-char *generateMask(int /*datasetNum*/, char *dirName) {
+char *generateMask(int /*datasetNum*/, char *dirName, int mask_dims) {
   // Mask generation parameters
   gpuTKRaw_GenerateParams_t raw_params;
-  raw_params.rows   = 5;
-  raw_params.cols   = 5;
+  raw_params.rows   = mask_dims;
+  raw_params.cols   = mask_dims;
   raw_params.minVal = 0;
   raw_params.maxVal = 1.0f / 25.0f;
   raw_params.type   = gpuTKType_float;
@@ -82,7 +82,7 @@ void compute(gpuTKImage_t output, gpuTKImage_t input, float *mask, int mask_rows
   }
 }
 
-void generate(int datasetNum, int height, int width, int minVal,
+void generate(int datasetNum, int height, int width, int mask_dims, int minVal,
               int maxVal) {
   char *dir_name = gpuTKPath_join(base_dir, datasetNum);
 
@@ -100,7 +100,7 @@ void generate(int datasetNum, int height, int width, int minVal,
 
   char *input_image_file_name =
       generateInput(datasetNum, dir_name, params);
-  char *input_mask_file_name = generateMask(datasetNum, dir_name);
+  char *input_mask_file_name = generateMask(datasetNum, dir_name, mask_dims);
 
   // Import mask and image
   gpuTKImage_t inputImage = gpuTKImport(input_image_file_name);
@@ -123,13 +123,15 @@ void generate(int datasetNum, int height, int width, int minVal,
 
 int main(void) {
   base_dir = gpuTKPath_join(gpuTKDirectory_current(), "Dataset");
-  generate(0, 64, 64, 0, 1);
-  generate(1, 128, 64, 0, 1);
-  generate(2, 64, 128, 0, 1);
-  generate(3, 64, 5, 0, 1);
-  generate(4, 64, 3, 0, 1);
-  generate(5, 228, 128, 0, 1);
-  generate(6, 28, 12, 0, 1);
+  generate(0, 64, 64, 5, 0, 1);
+  generate(1, 128, 64, 5, 0, 1);
+  generate(2, 64, 128, 5, 0, 1);
+  generate(3, 64, 5, 5, 0, 1);
+  generate(4, 64, 3, 5, 0, 1);
+  generate(5, 228, 128, 5, 0, 1);
+  generate(6, 28, 12, 5, 0, 1);
+  generate(7, 512, 512, 7, 0, 1);
+  generate(8, 1024, 1024, 17, 0, 1);
 
   return 0;
 }

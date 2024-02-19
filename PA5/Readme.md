@@ -90,6 +90,10 @@ Use the `make run` command to test your program. There are a total of 7 tests on
 
 The dataset required to test the program is already generated. If you are interested in how the dataset is generated please refer to the `dataset_generator.cpp` file. You may compile this file using the `make dataset_generator` command and run the executable using the command `./dataset_generator`. 
 
+## Extra Credit (optional)
+
+We have provided you an additional `make run_big` you can execute for larger images and larger kernel sizes.  If you successfully implement both cases, we will consider your execution time for the leaderboard.  You can test your execution time locally by running `make time`.
+
 ## Submission
 
 Submit the template.cu file on gradescope. Preserve the file name before uploading to gradescope.

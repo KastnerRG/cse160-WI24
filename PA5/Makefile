@@ -48,3 +48,14 @@ run: solution
 		@echo "test - 6"
 		@./solution -e ./Dataset/6/output.ppm -i ./Dataset/6/input0.ppm,./Dataset/6/input1.raw -t image
 		@echo "\n"
+
+run_big: solution
+		@echo "\n"
+		@echo "test - 7"
+		@./solution -e ./Dataset/7/output.ppm -i ./Dataset/7/input0.ppm,./Dataset/7/input1.raw -t image
+		@echo "\n"
+		@echo "test - 8"
+		@./solution -e ./Dataset/8/output.ppm -i ./Dataset/8/input0.ppm,./Dataset/8/input1.raw -t image
+
+time: solution
+		@./time_code.py
