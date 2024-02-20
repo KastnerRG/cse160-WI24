@@ -94,6 +94,15 @@ The dataset required to test the program is already generated. If you are intere
 
 We have provided you an additional `make run_big` you can execute for larger images and larger kernel sizes.  If you successfully implement both cases, we will consider your execution time for the leaderboard.  You can test your execution time locally by running `make time`.
 
+In order to complete this task, you will have to make your kernel size dynamic, meaning you can no longer use the following lines:
+
+```
+#define Mask_width 5
+#define Mask_radius Mask_width / 2
+```
+
+Consider how you can replace these with a dynamic version.
+
 ## Submission
 
 Submit the template.cu file on gradescope. Preserve the file name before uploading to gradescope.
