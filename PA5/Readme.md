@@ -103,6 +103,13 @@ In order to complete this task, you will have to make your kernel size dynamic, 
 
 Consider how you can replace these with a dynamic version.
 
+Feel free to remove
+```
+  assert(maskRows == 5);    /* mask height is fixed to 5 in this mp */
+  assert(maskColumns == 5); /* mask width is fixed to 5 in this mp */
+```
+as these lines are no longer relevant in our greater than 5x5 world.
+
 ## Submission
 
 Submit the template.cu file on gradescope. Preserve the file name before uploading to gradescope.
