@@ -62,3 +62,6 @@ run_big: solution
 		@echo "\n"
 		@echo "test - 10"
 		@./solution -e ./Dataset/10/output.ppm -i ./Dataset/10/input0.ppm,./Dataset/10/input1.raw -t image
+
+time: solution
+		@echo ./time_code.py
