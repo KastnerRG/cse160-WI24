@@ -110,7 +110,11 @@ Feel free to remove
 ```
 as these lines are no longer relevant in our greater than 5x5 world.
 
-For the autograder to time your kernel function, it must be called `convolution`.  The profiler does not consider arguments passed into it as part of the signature.
+For the autograder to time your kernel function, it must be called `convolution`.  The profiler does not consider arguments passed into it as part of the signature.  That said, a signature we used that worked was
+```
+__global__ void convolution(float *deviceInputImageData, const float * __restrict__ deviceMaskData,
+                            float *deviceOutputImageData, int imageChannels, int imageWidth, int imageHeight, int maskRows, int maskColumns)
+```
 
 ## Submission
 
