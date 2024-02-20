@@ -28,7 +28,7 @@ clean:
 run: solution
 		@echo "\n"
 		@echo "test - 0"
-		@./solution -e ./Dataset/0/output.ppm -i ./Dataset/0/input0.ppm,./Dataset/0/input1.raw -t image
+		@./solution -e ./Dataset/1/output.ppm -i ./Dataset/0/input0.ppm,./Dataset/0/input1.raw -t image
 		@echo "\n"
 		@echo "test - 1"
 		@./solution -e ./Dataset/1/output.ppm -i ./Dataset/1/input0.ppm,./Dataset/1/input1.raw -t image
@@ -48,14 +48,17 @@ run: solution
 		@echo "test - 6"
 		@./solution -e ./Dataset/6/output.ppm -i ./Dataset/6/input0.ppm,./Dataset/6/input1.raw -t image
 		@echo "\n"
-
-run_big: solution
-		@echo "\n"
 		@echo "test - 7"
 		@./solution -e ./Dataset/7/output.ppm -i ./Dataset/7/input0.ppm,./Dataset/7/input1.raw -t image
 		@echo "\n"
 		@echo "test - 8"
 		@./solution -e ./Dataset/8/output.ppm -i ./Dataset/8/input0.ppm,./Dataset/8/input1.raw -t image
+		@echo "\n"
 
-time: solution
-		@./time_code.py
+run_big: solution
+		@echo "\n"
+		@echo "test - 9"
+		@./solution -e ./Dataset/9/output.ppm -i ./Dataset/9/input0.ppm,./Dataset/9/input1.raw -t image
+		@echo "\n"
+		@echo "test - 10"
+		@./solution -e ./Dataset/10/output.ppm -i ./Dataset/10/input0.ppm,./Dataset/10/input1.raw -t image
