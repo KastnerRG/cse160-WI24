@@ -33,9 +33,9 @@ def get_executiontime():
             "ms",
             "./solution",
             "-e",
-            "./Dataset/8/output.ppm",
+            "./Dataset/10/output.ppm",
             "-i",
-            "./Dataset/8/input0.ppm,./Dataset/8/input1.raw",
+            "./Dataset/10/input0.ppm,./Dataset/10/input1.raw",
             "-t",
             "image"], stderr=PIPE)
         
