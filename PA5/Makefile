@@ -28,7 +28,7 @@ clean:
 run: solution
 		@echo "\n"
 		@echo "test - 0"
-		@./solution -e ./Dataset/1/output.ppm -i ./Dataset/0/input0.ppm,./Dataset/0/input1.raw -t image
+		@./solution -e ./Dataset/0/output.ppm -i ./Dataset/0/input0.ppm,./Dataset/0/input1.raw -t image
 		@echo "\n"
 		@echo "test - 1"
 		@./solution -e ./Dataset/1/output.ppm -i ./Dataset/1/input0.ppm,./Dataset/1/input1.raw -t image
