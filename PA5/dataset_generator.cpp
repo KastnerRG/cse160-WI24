@@ -130,8 +130,10 @@ int main(void) {
   generate(4, 64, 3, 5, 0, 1);
   generate(5, 228, 128, 5, 0, 1);
   generate(6, 28, 12, 5, 0, 1);
-  generate(7, 512, 512, 7, 0, 1);
-  generate(8, 1024, 1024, 17, 0, 1);
+  generate(7, 12, 32, 5, 0, 1);
+  generate(8, 48, 1024, 5, 0, 1);
+  generate(9, 512, 512, 7, 0, 1);
+  generate(10, 1024, 1024, 17, 0, 1);
 
   return 0;
 }
