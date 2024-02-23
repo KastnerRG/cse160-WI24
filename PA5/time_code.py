@@ -1,4 +1,5 @@
 #! /opt/conda/bin/python
+import os
 from subprocess import Popen, PIPE
 
 class bcolors:
@@ -15,7 +16,13 @@ class bcolors:
 SUPPORTED_GPU = "NVIDIA GeForce GTX 1080 Ti"
 
 def check_gpumodel():
-    with open("/proc/driver/nvidia/gpus/0000:04:00.0/information", "r") as f:
+    if not os.path.exists("/proc/driver/nvidia/gpus/"):
+        return
+
+    dirs = os.listdir("/proc/driver/nvidia/gpus/")
+    dirs.sort()
+
+    with open(f"{dirs[0]}/information", "r") as f:
         model = f.readline()
 
     model = model[len("Model:"):].strip()
