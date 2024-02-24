@@ -57,7 +57,7 @@ def get_executiontime():
     return sum(results) / float(len(results))
 
 def main():
-    check_gpumodel()
+    #check_gpumodel()
     execution_time = get_executiontime()
 
     print(f"\nYour time was {bcolors.OKGREEN}{execution_time:.2f} ms{bcolors.ENDC}.")
