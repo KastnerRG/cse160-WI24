@@ -22,7 +22,7 @@ def check_gpumodel():
     dirs = os.listdir("/proc/driver/nvidia/gpus/")
     dirs.sort()
 
-    with open(f"{dirs[0]}/information", "r") as f:
+    with open(os.path.join("/proc/driver/nvidia/gpus/", f"{dirs[0]}/information"), "r") as f:
         model = f.readline()
 
     model = model[len("Model:"):].strip()
@@ -57,7 +57,7 @@ def get_executiontime():
     return sum(results) / float(len(results))
 
 def main():
-    #check_gpumodel()
+    check_gpumodel()
     execution_time = get_executiontime()
 
     print(f"\nYour time was {bcolors.OKGREEN}{execution_time:.2f} ms{bcolors.ENDC}.")
