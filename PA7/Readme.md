@@ -54,7 +54,7 @@ Use the `make run` command to test your program which will run your program on a
 ## Test Output 
 
 You will need to checkout a GPU for this assignment, but please avoid editing while accessing a device. You can accomplish this with:
-`launch.sh -g 1 -s -i ucsdets/nvcr-cuda:latest`
+`launch.sh -g 1 -s -i ghcr.io/ucsd-ets/nvcr-cuda:main`
 
 The accuracy of your implementation should meet the 0.886 that our implementation does.
 
