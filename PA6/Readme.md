@@ -53,7 +53,7 @@ Use the `make run` command to test your program which will run your program on a
 ## Test Output 
 
 You should **NOT** checkout a GPU for this assignment, only the pod iteself which has the correct toolchains. You can accomplish this with:
-`launch.sh -g 0 -s -i ucsdets/nvcr-cuda:latest`
+`launch.sh -g 0 -s -i ghcr.io/ucsd-ets/nvcr-cuda:main`
 
 After loading a pod, executing `make run` (without having completed `cpu-new-forward.cc`) will result in the following output:
 
