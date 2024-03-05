@@ -60,7 +60,7 @@ The accuracy of your implementation should meet the 0.886 that our implementatio
 
 ## Extra credit
 
-For extra credit, you will implement a fully-connected layer using GPU. The arithmetic operation of a linear layer is equivalent to matrix multiplication. Be careful with matrix notation used in the codebase, and don't forget to add bias to each output.
+For extra credit, you will implement a fully-connected layer using GPU. The arithmetic operation of a linear layer is equivalent to matrix multiplication. You should use shared memory and tiled matrix multiplication for faster execution. Be careful with matrix notation used in the codebase, and don't forget to add bias to each output.
 
 The code for extra credit is also in `src/layer/custom/new-forward.cu`. Use `make run-extra` to test your program on a batch size of 1000 images, this is equivalent to executing `make m2-extra` and running `./m2 1000`.  
 
