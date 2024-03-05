@@ -1,5 +1,13 @@
-m1:		m1.o custom
+m1:		m1.o ece408net.o network.o mnist.o layer loss custom
 		nvcc -o m1 -lm -lcuda -lrt m1.o ece408net.o src/network.o src/mnist.o src/layer/*.o src/loss/*.o src/layer/custom/*.o ../libgputk/lib/libgputk.a -I./ 
+
+debug:	debug_m1
+
+debug_m1: m1.o ece408net.o network.o mnist.o layer loss
+		nvcc -g -G -gencode arch=compute_`/usr/local/cuda/bin/__nvcc_device_query`,code=sm_`/usr/local/cuda/bin/__nvcc_device_query`  --compile src/layer/custom/cpu-new-forward.cc -o src/layer/custom/cpu-new-forward.o -I ../libgputk/ -I./
+		nvcc -g -G -gencode arch=compute_`/usr/local/cuda/bin/__nvcc_device_query`,code=sm_`/usr/local/cuda/bin/__nvcc_device_query`  --compile src/layer/custom/gpu-utils.cu -o src/layer/custom/gpu-utils.o -I ../libgputk/ -I./
+		nvcc -g -G -gencode arch=compute_`/usr/local/cuda/bin/__nvcc_device_query`,code=sm_`/usr/local/cuda/bin/__nvcc_device_query`  --compile src/layer/custom/new-forward.cu -o src/layer/custom/new-forward.o -I ../libgputk/ -I./
+		nvcc -g -G -gencode arch=compute_`/usr/local/cuda/bin/__nvcc_device_query`,code=sm_`/usr/local/cuda/bin/__nvcc_device_query` -o m1 -lm -lcuda -lrt m1.o ece408net.o src/network.o src/mnist.o src/layer/*.o src/loss/*.o src/layer/custom/*.o ../libgputk/lib/libgputk.a -I./ 
 
 m2.o:		m2.cc
 		nvcc --compile m2.cc -I ../libgputk/ -I./
@@ -40,6 +48,7 @@ loss:           src/loss/cross_entropy_loss.cc src/loss/mse_loss.cc
 clean:
 		rm m1
 		rm m1.o
+		find . -name "*.o" -type f -delete
 
 run: 		m1
 		./m1 1000
