@@ -1,9 +1,9 @@
 
-# Programming Assignment 7: CNN Forward Layer GPU Implementation
+# Programming Assignment 8: CNN Forward Layer GPU Implementation (Optimized)
 
 ## Objective
 
-This is the second part of a three part project implementing and optimizing the forward pass of a convolution layer using CUDA. Convolutional layers are the primary building blocks of convolutional neural networks (CNNs), which are used for tasks like image classification, object detection, natural language processing and recommendation systems. 
+This is the last part of a three part project implementing and optimizing the forward pass of a convolution layer using CUDA. Convolutional layers are the primary building blocks of convolutional neural networks (CNNs), which are used for tasks like image classification, object detection, natural language processing and recommendation systems. 
 
 You will be working with a modified version of the LeNet5 architceture shown bellow:
 
@@ -45,7 +45,7 @@ This animation can help visualize this process better:
 
 ## How to Compile
 
-The `src/layer/custom/new-forward.cu` file contains the code for the programming assignment. There is a Makefile included which compiles it and links it with the libgputk CUDA library automatically. It can be run by typing `make m2` from the PA7 folder. It generates a `m2` output executable.
+Similar to what you saw in PA7, the `src/layer/custom/new-forward.cu` file contains the code for the programming assignment. Check the functions in the file for further guidance. There is a Makefile included which compiles it and links it with the libgputk CUDA library automatically. It can be run by typing `make m2` from the PA8 folder. It generates a `m2` output executable.
 
 ## How to test
 
@@ -58,9 +58,15 @@ You will need to checkout a GPU for this assignment, but please avoid editing wh
 
 The accuracy of your implementation should meet the 0.886 that our implementation does.
 
+## Extra credit
+
+For extra credit, you will implement a fully-connected layer using GPU. The arithmetic operation of a linear layer is equivalent to matrix multiplication. Be careful with matrix notation used in the codebase, and don't forget to add bias to each output.
+
+The code for extra credit is also in `src/layer/custom/new-forward.cu`. Use `make run-extra` to test your program on a batch size of 1000 images, this is equivalent to executing `make m2-extra` and running `./m2 1000`.  
+
 ## Submission
 
-Submit the src/layer/custom/new-forward.cu file on gradescope.
+Submit the `src/layer/custom/new-forward.cu` file on gradescope.
 
 ## Credit
 
