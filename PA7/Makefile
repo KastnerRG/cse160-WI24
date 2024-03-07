@@ -61,3 +61,6 @@ clean:
 
 run: 		m2
 		./m2 1000
+
+time: m2
+		../utils/profile.py ./m2 1000
