@@ -51,6 +51,11 @@ Similar to what you saw in PA7, the `src/layer/custom/new-forward.cu` file conta
 
 Use the `make run` command to test your program which will run your program on a batch size of 1000 images. This will automatically compile your source (equivilent to executing `make m2` and then running `./m2 1000`).
 
+## How to time
+We will be checking the execution time of your software.  Your code must execute in less than 50 ms to recieve credit.
+
+To test this, use `-v 1080ti` as a switch to your launch script to request an NVIDIA GTX 1080Ti.  Then use `make time`.
+
 ## Test Output 
 
 You will need to checkout a GPU for this assignment, but please avoid editing while accessing a device. You can accomplish this with:
@@ -67,6 +72,8 @@ The code for extra credit is also in `src/layer/custom/new-forward.cu`. Use `mak
 ## Submission
 
 Submit the `src/layer/custom/new-forward.cu` file on gradescope.
+
+Ensure that you do **NOT** submit your extra credit to the timed PA8 submission.  There is a specific Extra Credit submission on Gradescope you should submit to.
 
 ## Credit
 
