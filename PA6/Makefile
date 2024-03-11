@@ -7,14 +7,14 @@ m2:		m2.o ece408net.o src/network.o src/mnist.o layer.sentinel loss.sentinel cus
 debug:	debug_m1
 
 debug_m1: m1.o ece408net.o src/network.o src/mnist.o layer.sentinel loss.sentinel src/layer/custom/cpu-new-forward.cc src/layer/custom/gpu-utils.cu src/layer/custom/new-forward.cu
-		rm custom.sentinel
+		rm custom.sentinel || true
 		nvcc -g -G -gencode arch=compute_`/usr/local/cuda/bin/__nvcc_device_query`,code=sm_`/usr/local/cuda/bin/__nvcc_device_query`  --compile src/layer/custom/cpu-new-forward.cc -o src/layer/custom/cpu-new-forward.o -I ../libgputk/ -I./
 		nvcc -g -G -gencode arch=compute_`/usr/local/cuda/bin/__nvcc_device_query`,code=sm_`/usr/local/cuda/bin/__nvcc_device_query`  --compile src/layer/custom/gpu-utils.cu -o src/layer/custom/gpu-utils.o -I ../libgputk/ -I./
 		nvcc -g -G -gencode arch=compute_`/usr/local/cuda/bin/__nvcc_device_query`,code=sm_`/usr/local/cuda/bin/__nvcc_device_query`  --compile src/layer/custom/new-forward.cu -o src/layer/custom/new-forward.o -I ../libgputk/ -I./
 		nvcc -g -G -gencode arch=compute_`/usr/local/cuda/bin/__nvcc_device_query`,code=sm_`/usr/local/cuda/bin/__nvcc_device_query` -o m1 -lm -lcuda -lrt m1.o ece408net.o src/network.o src/mnist.o src/layer/*.o src/loss/*.o src/layer/custom/*.o ../libgputk/lib/libgputk.a -I./ 
 
 debug_m2: m1.o ece408net.o src/network.o src/mnist.o layer.sentinel loss.sentinel src/layer/custom/cpu-new-forward.cc src/layer/custom/gpu-utils.cu src/layer/custom/new-forward.cu
-		rm custom.sentinel
+		rm custom.sentinel || true
 		nvcc -g -G -gencode arch=compute_`/usr/local/cuda/bin/__nvcc_device_query`,code=sm_`/usr/local/cuda/bin/__nvcc_device_query`  --compile src/layer/custom/cpu-new-forward.cc -o src/layer/custom/cpu-new-forward.o -I ../libgputk/ -I./
 		nvcc -g -G -gencode arch=compute_`/usr/local/cuda/bin/__nvcc_device_query`,code=sm_`/usr/local/cuda/bin/__nvcc_device_query`  --compile src/layer/custom/gpu-utils.cu -o src/layer/custom/gpu-utils.o -I ../libgputk/ -I./
 		nvcc -g -G -gencode arch=compute_`/usr/local/cuda/bin/__nvcc_device_query`,code=sm_`/usr/local/cuda/bin/__nvcc_device_query`  --compile src/layer/custom/new-forward.cu -o src/layer/custom/new-forward.o -I ../libgputk/ -I./
