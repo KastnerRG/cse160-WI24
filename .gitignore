@@ -1,3 +1,8 @@
+# Sentinel files to allow `make` to track whether multiple files in a folder
+# have already been compiled
+# https://tech.davis-hansson.com/p/make/#sentinel-files
+*.sentinel
+
 # Created by https://www.toptal.com/developers/gitignore/api/c++,cuda,linux,macos,python,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=c++,cuda,linux,macos,python,windows
 
@@ -65,7 +70,8 @@
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
