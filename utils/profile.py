@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
     parser.add_argument('--gpu', default=DEFAULT_SUPPORTED_GPU) 
     parser.add_argument('--no-warn', action="store_true")
-    parser.add_argument('-n', '--num_runs', default=10)
+    parser.add_argument('-n', '--num_runs', default=10, type=int)
     parser.add_argument('-a', '--args', nargs='+', default=[])
 
     args = parser.parse_args()
